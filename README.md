@@ -21,3 +21,11 @@ from sklearn.metrics import accuracy_score
 # Loading the dataset into a pandas DataFrame
 sonar_data = pd.read_csv('/content/sonar data.csv', header=None)
 
+### Getting the Number of Rows and Columns in the Dataset
+
+```python
+# Get the number of rows and columns in the dataset
+num_rows, num_cols = sonar_data.shape
+
+(208,61)
+
