@@ -29,3 +29,52 @@ num_rows, num_cols = sonar_data.shape
 
 (208,61)
 
+### Separating Data and Labels
+
+```python
+# Separate features (data) and labels
+X = sonar_data.drop(columns=60, axis=1)  # Features (data)
+Y = sonar_data[60]  # Labels
+
+### **Training and Test data**
+
+### Splitting the Data into Training and Test Sets
+
+```python
+# Split the data into training and test sets
+X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.1, stratify=Y, random_state=1)
+
+# Print the shapes of the datasets
+print("Shape of X:", X.shape)
+print("Shape of X_train:", X_train.shape)
+print("Shape of X_test:", X_test.shape)
+
+
+model = LogisticRegression()
+#training the Logistic Regression model with training data
+model.fit(X_train, Y_train)
+
+
+#accuracy on training data
+X_train_prediction = model.predict(X_train)
+training_data_accuracy = accuracy_score(X_train_prediction, Y_train)
+
+print('Accuracy on training data : ', training_data_accuracy)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
